@@ -45,8 +45,8 @@ img {
   padding-bottom: 3px;
 }
 .navbar > .menu > ul > li > a:hover {
-  border-bottom: #00b2a0 solid 4px;
-  color: #00b2a0;
+  border-bottom: #00bcd4 solid 4px;
+  color: #00bcd4;
   font-weight: 700;
 }
 .navbar .search {
@@ -108,8 +108,13 @@ img {
 
 /* Container */
 .container {
-  width: 100%;
-  background: #f4f4f4;
+  margin: auto;
+  max-width: 900px;
+  padding: 20px 30px 15px 30px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2.2em;
+  color: #333e4c;
 }
 
 /* Summary */
@@ -125,14 +130,14 @@ img {
   margin-left: 5px;
   padding: 1px 5px 1px 5px;
   border-radius: 5px;
-  border: #00b2a0 solid 1px;
-  color: #00b2a0;
+  border: #00bcd4 solid 1px;
+  color: #00bcd4;
   font-size: 0.8em;
 }
 .post .summary-more:hover {
   text-decoration: none;
   color: white;
-  background: #00b2a0;
+  background: #00bcd4;
 }
 
 /* Post */
@@ -148,7 +153,7 @@ img {
   border-bottom: #b3b3b3 dashed 1px;
 }
 .post a:hover {
-  color: #00b2a0;
+  color: #00bcd4;
 }
 .post > .post-title {
   font-size: 0.75em;
@@ -170,10 +175,15 @@ img {
   line-height: 2.1em;
 }
 .post .post-meta h1 {
-  color: #00b2a0;
+  color: #00bcd4;
   margin: -4px 0px 40px 0px;
   line-height: 1.2em;
 }
+
+.post .post-meta h1:hover {
+  color: #b2ebf2;
+}
+
 .post .post-meta time {
   margin-bottom: 0px;
 }
@@ -195,7 +205,7 @@ img {
   border-bottom: none;
 }
 .post .post-toc a:hover {
-  color: #00b2a0;
+  color: #00bcd4;
 }
 .post .post-toc .title {
   font-size: 1em;
@@ -242,7 +252,7 @@ img {
 }
 .post .post-content a:hover {
   text-decoration: none;
-  border-bottom: #00b2a0 solid 2px;
+  border-bottom: #00bcd4 solid 2px;
 }
 .post .post-content code {
   background-color: #f1f1f1;
@@ -284,7 +294,7 @@ img {
   border-bottom: none;
 }
 .post .share a:hover i {
-  color: #00b2a0;
+  color: #00bcd4;
 }
 @media screen and (max-width: 550px) {
   .post .share {
@@ -303,8 +313,8 @@ img {
   margin: 0px 6px 0px 6px;
 }
 .post .post-meta-code a:hover {
-  color: #00b2a0;
-  border-bottom: #00b2a0 solid 2px;
+  color: #00bcd4;
+  border-bottom: #00bcd4 solid 2px;
 }
 .post .post-meta-code .desc {
   padding-left: 10px;
@@ -359,10 +369,10 @@ img {
 }
 .paging a {
   text-decoration: none;
-  color: #00b2a0;
+  color: #00bcd4;
 }
 .paging a:hover {
-  border-bottom: #00b2a0 solid 4px;
+  border-bottom: #00bcd4 solid 4px;
 }
 
 /* Go Top */
@@ -417,14 +427,15 @@ img {
   color: #c7c7c7;
 }
 .footer a:hover {
-  color: #00b2a0;
+  color: #00bcd4;
   text-decoration: none;
-  border-bottom: #00b2a0 solid 4px;
+  border-bottom: #00bcd4 solid 4px;
 }
 
-/* Categories */
+/*Categories*/
+
 .categories {
-  padding: 20px;
+  padding: 10px;
 }
 .categories a {
   text-decoration: none;
@@ -447,7 +458,7 @@ img {
 }
 .categories > ul > li .title a:hover,
 .categories > ul > li .links a:hover {
-  color: #00b2a0;
+  color: #00bcd4;
 }
 .categories > ul > li .title .icon {
   margin-right: 10px;
@@ -463,6 +474,48 @@ img {
 }
 @media screen and (max-width: 550px) {
   .categories > ul > li .links {
+    display: none;
+  }
+}
+
+/* Subcategories */
+.subcategories a {
+  text-decoration: none;
+  color: #4a4a4a;
+}
+.subcategories > ul {
+  list-style-type: none;
+  margin: 0px;
+}
+.subcategories > ul > li {
+  padding: 5px;
+}
+.subcategories > ul > li:hover,
+.subcategories > ul > li:hover a {
+  background-color: #e3e3e3;
+}
+.subcategories > ul > li .title {
+  display: inline-block;
+  width: 270px;
+}
+.subcategories > ul > li .title a:hover,
+.subcategories > ul > li .links a:hover {
+  color: #00bcd4;
+}
+.subcategories > ul > li .title .icon {
+  margin-right: 10px;
+}
+.subcategories > ul > li .links small {
+  margin-right: 20px;
+  color: #a0a0a0;
+}
+@media screen and (max-width: 1000px) {
+  .subcategories > ul > li .links .recent-title {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  .subcategories > ul > li .links {
     display: none;
   }
 }
@@ -485,7 +538,7 @@ img {
 .tags > .tag-list .tag:hover,
 .tags > .tag-list .tag a:hover {
   background-color: #e3e3e3;
-  color: #00b2a0;
+  color: #00bcd4;
 }
 .tags > .tag-list .tag small {
   color: #a0a0a0;
