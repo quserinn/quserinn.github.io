@@ -8,7 +8,7 @@
     <language>ko-KR</language>
     <managingEditor>quserinn@naver.com (신지호)</managingEditor>
     <webMaster>quserinn@naver.com (신지호)</webMaster>
-    <lastBuildDate>Wed, 13 May 2020 21:42:30 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2020 22:41:30 +0900</lastBuildDate>
     
 	<atom:link href="http://quserinn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
     <item>
       <title>blog</title>
       <link>http://quserinn.github.io/tags/blog/</link>
-      <pubDate>Wed, 13 May 2020 21:42:30 +0900</pubDate>
+      <pubDate>Fri, 15 May 2020 22:41:30 +0900</pubDate>
       <author>quserinn@naver.com (신지호)</author>
       <guid>http://quserinn.github.io/tags/blog/</guid>
       <description></description>
@@ -25,7 +25,7 @@
     <item>
       <title>hugo</title>
       <link>http://quserinn.github.io/tags/hugo/</link>
-      <pubDate>Wed, 13 May 2020 21:42:30 +0900</pubDate>
+      <pubDate>Fri, 15 May 2020 22:41:30 +0900</pubDate>
       <author>quserinn@naver.com (신지호)</author>
       <guid>http://quserinn.github.io/tags/hugo/</guid>
       <description></description>
