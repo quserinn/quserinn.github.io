@@ -198,6 +198,7 @@ img {
   background-color: #f5f5f5;
   font-size: 0.8em;
   line-height: 1.8em;
+  margin-bottom: 20px
 }
 .post .post-toc a,
 .post .post-toc a:visited {
@@ -282,7 +283,6 @@ img {
   border: 1px solid #dedede;
   padding: 3px 10px;
 }
-
 .post .share {
   margin: 1em;
   padding-top: 1.5em;
@@ -326,6 +326,10 @@ img {
 }
 .post .post-meta-code .highlight {
   color: black;
+}
+
+.post .post-next a{
+  float: right;
 }
 
 .post .post-comment {

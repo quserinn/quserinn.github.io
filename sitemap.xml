@@ -28,11 +28,6 @@
   </url>
   
   <url>
-    <loc>http://quserinn.github.io/posts/200515-how-to-make-hugo-blog/</loc>
-    <lastmod>2020-05-13T21:42:30+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://quserinn.github.io/posts/</loc>
     <lastmod>2020-05-13T21:42:30+09:00</lastmod>
   </url>
@@ -49,6 +44,11 @@
   
   <url>
     <loc>http://quserinn.github.io/</loc>
+    <lastmod>2020-05-13T21:42:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://quserinn.github.io/posts/200515-how-to-make-hugo-blog-1/</loc>
     <lastmod>2020-05-13T21:42:30+09:00</lastmod>
   </url>
   

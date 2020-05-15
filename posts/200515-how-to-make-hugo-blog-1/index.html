@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>휴고(Hugo)와 깃허브(Github)로 블로그 만들기(1)  | 소고기</title>
+  <meta name="description" content="소고기고기 '휴고(Hugo)와 깃허브(Github)로 블로그 만들기(1)'을 한 번 살펴보세요.">
+  <meta property="og:title" content="휴고(Hugo)와 깃허브(Github)로 블로그 만들기(1)">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2020-05-13">
+  
+  <meta property="og:description" content="소고기고기 '휴고(Hugo)와 깃허브(Github)로 블로그 만들기(1)'을 한 번 살펴보세요.">
+  <meta property="og:url" content="http://quserinn.github.io/posts/200515-how-to-make-hugo-blog-1/">
+  <meta property="og:site_name" content="소고기">
+  
+  <meta property="og:image" content="http://quserinn.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="hugo">
+  
+  <meta property="og:tags" content="blog">
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="http://quserinn.github.io/posts/200515-how-to-make-hugo-blog-1/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap"> 
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>     
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> 메뉴
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/">#포스트</a></li>
+        <li><a href="/categories">#카테고리</a></li>
+        <li><a href="/tags">#태그</a></li>   
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="검색어" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="http://quserinn.github.io/posts/200515-how-to-make-hugo-blog-1/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>2020년 05월 13일 21시 42분</time>
+        <h1>휴고(Hugo)와 깃허브(Github)로 블로그 만들기(1)</h1>
+      </div>
+    </a>
+  </div>
+  <div class="post-toc">
+    <span class="title">차례</span>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hugo를-선택한-이유">Hugo를 선택한 이유</a></li>
+    <li><a href="#quick-start">Quick Start</a>
+      <ul>
+        <li><a href="#1-휴고-설치">1. 휴고 설치</a></li>
+        <li><a href="#2-사이트-생성">2. 사이트 생성</a></li>
+        <li><a href="#3-테마-추가">3. 테마 추가</a></li>
+        <li><a href="#4-포스트-추가">4. 포스트 추가</a></li>
+        <li><a href="#5-서버-시작">5. 서버 시작</a></li>
+      </ul>
+    </li>
+    <li><a href="#host-on-github">Host on Github</a>
+      <ul>
+        <li><a href="#1-레포지토리-생성">1. 레포지토리 생성</a></li>
+        <li><a href="#2-레포지토리-연결">2. 레포지토리 연결</a></li>
+        <li><a href="#3-스크립트-실행">3. 스크립트 실행</a></li>
+        <li><a href="#4-접속-하기">4. 접속 하기</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+  <section class="post-content">
+    <p>오래 전에는 잘하는 개발자가 되려면 기술 블로그 하나정도는 해야한다는 생각을 했었다. 그래서 만들어야지 생각만 하다가 취업을 앞두고 jekyll을 이용해서 만들었지만 막상 만들고 나서는 포스팅 할게 없어서 방치해 두었던 기억이 있다. 취업을 하게된 지금에서야 포스팅 하고 싶은게 생겨서 다시 처음부터 블로그를 만들어 봤다.</p>
+<h2 id="hugo를-선택한-이유">Hugo를 선택한 이유</h2>
+<p>사실 jekyll이 사용자도 가장 많고, 그만큼 테마도 많은 것으로 알고 있다. 그래서 저번에 블로그를 만들 때도 jekyll을 이용해서 만들었는데, Ruby로 만들어져 있다 보니 Ruby에 대한 이해가 부족한 나로서는 제대로 이해하지 못하고 가이드를 따라가기만 해야했다. 반면에 Hugo는 요즘 업무에서도 사용하고 있는 Go로 만들어져 있기 때문에 좀 더 이해하기 편할 것이라고 생각했다. 그 외에도 차이점이 더 있을까 해서 찾아보았다.
+<img src="../../images/hugo-jekyll-compared.png" alt="hugo-jekyll-compared"></p>
+<ul>
+<li><strong>빠르다</strong> 기본적으로 jekyll에 비해서 빌드가 빠르고, 페이지 수가 늘어날 수록 그 차이는 더 커진다고 한다.</li>
+<li><strong>설치가 간편하다</strong> Windows를 포함한 대부분의 운영체제를 공식적으로 지원하고 있기 때문에 공식 문서만 따라간다면 간편하게 블로그를 바로 띄울 수 있다.</li>
+<li><strong>테마 커스터마이징이 쉽다</strong></li>
+</ul>
+<p>단점도 몇가지 있었는데,</p>
+<ul>
+<li>github가 공식으로 지원하고 있는 jekyll과는 다르게 github 연동 시 native로 연동이 되지 않기 때문에 따로 관리해야한다.</li>
+<li>jekyll에서는 외부 plugin으로 해결가능하던 것들을 hugo에서는 직접 해야할 수도 있다.</li>
+</ul>
+<p>사전 정보는 이정도면 충분한 것 같고, 이제 직접 만들어 보자.</p>
+<h2 id="quick-start">Quick Start</h2>
+<blockquote>
+<p>공식 가이드는 <a href="https://gohugo.io/getting-started/quick-start/">여기</a></p>
+</blockquote>
+<p>설치 환경은 Windows + Ubuntu이다. Ubuntu 환경에서 설치하려면 다른 환경에 비해 좀 더 복잡한 것 같다. Windows 자체나 다른 환경에서 설치하실 분들은 공식 가이드를 참고하시면 된다.</p>
+<p>Unbuntu에서 설치할 때 주로 사용하는 것처럼 <code>sudo apt-get install hugo</code> 명령어로도 hugo를 설치할 수 있지만 낮은 버전밖에 없어서 테마 호환같은게 잘 안될 것이다. 그래서 나는 직접 수동으로 설치했다.</p>
+<h3 id="1-휴고-설치">1. 휴고 설치</h3>
+<pre><code>$ sudo uname -i
+$ wget https://github.com/gohugoio/hugo/releases/download/v0.70.0/hugo_0.70.0_Linux-64bit.deb
+$ sudo dpkg -i hugo_0.70.0_Linux-64bit.deb
+$ sudo hugo version
+Hugo Static Site Generator v0.70.0-7F47B99E linux/amd64 BuildDate: 2020-05-06T11:18:50Z
+</code></pre><p>위에서 부터 차례로 실행하면 된다. <code>sudo uname -i</code> 명령어로 리눅스 시스템 정보를 확인할 수 있는데, 여기서 <code>X86_64</code>가 나왔다면 그대로 실행하면 되고, 다른 시스템이면 <a href="https://github.com/gohugoio/hugo/releases">여기서</a> 찾아서 다른 버전을 설치해야한다.</p>
+<p>.deb 파일을 받았으면 dpkg로 패키지를 설치하고, hugo 명령어로 설치 확인을 하면된다. 마지막 줄처럼 출력되면 성공적으로 설치가 된 것이다.</p>
+<p>설치를 완료했으면 간단한 블로그를 띄워보자.</p>
+<h3 id="2-사이트-생성">2. 사이트 생성</h3>
+<pre><code>$ hugo new site quickstart
+</code></pre><p>정상적으로 생성되었다면 <code>quickstart</code>라는 이름의 디렉토리가 생성되었을 것이다.</p>
+<h3 id="3-테마-추가">3. 테마 추가</h3>
+<pre><code>$ cd quickstart
+$ git init
+$ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+</code></pre><p>여기서는 <code>ananke</code>라는 테마를 설치했는데 다른 테마들은 <a href="https://themes.gohugo.io/">여기서</a> 확인 할 수 있다.</p>
+<p><img src="../../images/hugo-themes-page.png" alt="hugo-themes-page"></p>
+<hr>
+<pre><code>$ echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+</code></pre><p>설치한 테마는 <code>config.toml</code>에 테마 설정을 해주면 된다.</p>
+<h3 id="4-포스트-추가">4. 포스트 추가</h3>
+<pre><code>$ hugo new posts/my-first-post.md
+</code></pre><p>위 명령어로 포스트를 생성할 수 있다. <code>quickstart/content/posts/my-first-post.md</code> 파일이 생성된다. 생성된 포스트는 <code>&lt;baseURL&gt;/posts/my-first-post</code>의 주소를 가지게 된다. 처음 생성하면 이 포스트의 메타데이터만 가지고 있는데, <code>archetypes/default.md</code> 파일에서 기본 생성 메타데이터를 설정할 수 있다.</p>
+<h3 id="5-서버-시작">5. 서버 시작</h3>
+<pre><code>$ hugo server -D
+</code></pre><p>로컬에서 서버를 띄울 수 있다. 서버가 띄우는데 성공하면 <code>localhost:1313</code>에서 확인할 수 있다. 앞서 만들었던 포스트가 보일 것이다.
+<img src="../../images/my-new-hugo-site.png" alt="my-new-hugo-site"></p>
+<p><code>-D</code> 옵션은 포스트 메타데이터에서 <code>draft = true</code>로 해놓은 포스트들도 나올 수 있게 설정하는 것이다. 보통 작성 중인 포스트를 <code>draft = true</code>로 해놓고, 작성 완료되면 이 설정을 지우면 된다.</p>
+<hr>
+<p>여기까지 하면 간단한 블로그를 로컬에서 띄울 수 있을 것이다. 이제부터 깃허브와 연동해서 외부에서 접속할 수 있도록 해보자.</p>
+<h2 id="host-on-github">Host on Github</h2>
+<blockquote>
+<p>공식 가이드는 <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">여기</a></p>
+</blockquote>
+<p>깃허브와 연동하려면 두개의 레포지토리가 필요하다. 하나는 소스 파일을 넣고, 다른 하나에 빌드한 파일을 넣는다. 아래 순서대로 하면 된다.</p>
+<h3 id="1-레포지토리-생성">1. 레포지토리 생성</h3>
+<ul>
+<li><code>&lt;YOUR-PROJECT&gt;</code> 이름의 레포지토리 생성</li>
+<li><code>&lt;USERNAME&gt;.github.io</code> 이름의 레포지토리 생성</li>
+</ul>
+<p><code>&lt;YOUR-PROJECT&gt;</code>는 아무 이름이나 사용해도 되지만 두번째 레포지토리는 정확히 저렇게 생성해야 깃허브로 렌더링을 할 수 있다. <code>&lt;USERNAME&gt;</code>에는 깃허브 아이디를 쓰면 된다. 레포지토리 생성 시 <code>README.md</code>파일을 생성할지 여부를 묻는 칸이 있는데 깃에 익숙하지 않다면 첫번째 레포지토리는 생성 안함, 두번째 레포지토리는 생성하는 것이 아래 진행하는데 편할 것이다.</p>
+<h3 id="2-레포지토리-연결">2. 레포지토리 연결</h3>
+<pre><code>$ git init
+$ git remote add origin http://github.com/&lt;USERNAME&gt;/&lt;YOUR-PROJECT&gt;
+$ rm -rf public
+$ git submodule add -b master https://github.com/&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public
+</code></pre><p>앞에서 만든 hugo 프로젝트 안에서 위의 명령어를 실행해서 프로젝트 디렉토리와 깃허브 리모트를 연결한다. hugo를 빌드하면 <code>public</code> 디렉토리가 생기는데 두번째 레포지토리와 <code>public</code>을 연결하기 전에 먼저 존재하는 <code>public</code> 디렉토리를 지우고 연결한다.</p>
+<h3 id="3-스크립트-실행">3. 스크립트 실행</h3>
+<p>위 순서까지 잘 진행했다면 공식 가이드에 있는 스크립트를 만들어서 실행하자. 별로 복잡한 작업은 아니지만 매번 수동으로하려면 귀찮은데 스크립트를 만들어 놓으면 편하다.</p>
+<pre><code>#!/bin/sh
+
+# If a command fails then the deploy stops
+set -e
+
+printf &quot;\033[0;32mDeploying updates to GitHub...\033[0m\n&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+# Go To Public folder
+cd public
+
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+	msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+</code></pre><p>2.에서 명령어를 실행했던 프로젝트 디렉토리에서 위의 스크립트를 실행하면 된다.</p>
+<h3 id="4-접속-하기">4. 접속 하기</h3>
+<p>이제 외부에서 접근할 수 있는 블로그가 만들어졌을 것이다. <code>https://&lt;USERNAME&gt;.github.io</code>에서 연결되는지 확인해 보자.</p>
+<hr>
+<p>여기까지 했으면 기본적인 글쓰기를 할 수 있을 것이다. 하지만 기본 테마를 그냥 쓰기에는 좀 밋밋할 수 있다. 다음 포스팅에서 테마 커스터마이징 하는 간단한 방법을 알아보자.</p>
+
+  </section>
+  
+  
+
+  
+  <div class="post-comment">    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "quserinn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>    
+  </div>
+  
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>위로</span>
+  </a>
+</div>
+<footer class="footer">
+  COPYRIGHT (C) <a href="https://blog.lulab.net">DONGGEUN,BANG (LUBANG).</a><br />
+  ALL RIGHTS RESERVED.
+</footer>
+</body>
+</html>
+
