@@ -2,15 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 소고기</title>
-    <link>http://sogogi.blog/categories/</link>
+    <link>http://quserinn.github.io/categories/</link>
     <description>Recent content in Categories on 소고기</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
     <managingEditor>quserinn@naver.com (신지호)</managingEditor>
     <webMaster>quserinn@naver.com (신지호)</webMaster>
+    <lastBuildDate>Wed, 13 May 2020 21:42:30 +0900</lastBuildDate>
     
-	<atom:link href="http://sogogi.blog/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://quserinn.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>develop</title>
+      <link>http://quserinn.github.io/categories/develop/</link>
+      <pubDate>Wed, 13 May 2020 21:42:30 +0900</pubDate>
+      <author>quserinn@naver.com (신지호)</author>
+      <guid>http://quserinn.github.io/categories/develop/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
