@@ -37,6 +37,29 @@
       e.className = 'menu';
   }
   </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
 </head>
 <body>
   <div class="navbar">
@@ -76,6 +99,18 @@
     <div class="tag">
       <a href="http://quserinn.github.iotags/hugo">
         hugo <small>(2)</small>
+      </a>
+    </div>
+    
+    <div class="tag">
+      <a href="http://quserinn.github.iotags/%EC%9E%AC%EB%AC%B4%EC%A0%9C%ED%91%9C">
+        재무제표 <small>(1)</small>
+      </a>
+    </div>
+    
+    <div class="tag">
+      <a href="http://quserinn.github.iotags/%EC%A3%BC%EC%8B%9D">
+        주식 <small>(1)</small>
       </a>
     </div>
        

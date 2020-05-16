@@ -37,6 +37,29 @@
       e.className = 'menu';
   }
   </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
 </head>
 <body>
   <div class="navbar">
@@ -61,6 +84,25 @@
   </div>
   <div class="container">    
 <div class="container">
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="http://quserinn.github.io/subcategories/book-review/" title="book-review">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>2020년 05월 16일 09시 36분</time>
+        <h1>book-review</h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
   
   <div class="post">
   <div class="post-title">

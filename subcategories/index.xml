@@ -8,10 +8,19 @@
     <language>ko-KR</language>
     <managingEditor>quserinn@naver.com (신지호)</managingEditor>
     <webMaster>quserinn@naver.com (신지호)</webMaster>
-    <lastBuildDate>Fri, 15 May 2020 22:41:30 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2020 09:36:39 +0900</lastBuildDate>
     
 	<atom:link href="http://quserinn.github.io/subcategories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>book-review</title>
+      <link>http://quserinn.github.io/subcategories/book-review/</link>
+      <pubDate>Sat, 16 May 2020 09:36:39 +0900</pubDate>
+      <author>quserinn@naver.com (신지호)</author>
+      <guid>http://quserinn.github.io/subcategories/book-review/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>blog</title>

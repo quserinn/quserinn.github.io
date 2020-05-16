@@ -37,6 +37,29 @@
       e.className = 'menu';
   }
   </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
 </head>
 <body>
   <div class="navbar">
@@ -101,6 +124,52 @@
             <a href="http://quserinn.github.io/posts/200515-how-to-make-hugo-blog-2/">
               <small>2020-05-15</small>
               <span class="recent-title">휴고(Hugo)와 깃허브(Github)로 블로그 만들기(2)</span>
+            </a>
+            
+          </span>
+        </li>
+      
+      
+      
+      
+      </ul>
+    </div>
+    
+    <li>
+      <span class="title">
+        <a href="http://quserinn.github.iocategories/stock">
+          <i class="fa fa-angle-right icon" aria-hidden="true"></i>
+          STOCK (1개)
+        </a>
+      </span>
+      <span class="links">
+        
+        <a href="http://quserinn.github.io/posts/200516-read-financial-statements/">
+          <small>2020-05-16</small>
+          <span class="recent-title">[리뷰] 재무제표 모르면 주식투자 절대로 하지마라</span>
+        </a>
+        
+      </span>
+    </li>
+    <div class="subcategories">
+      
+      <ul>
+      
+      
+      
+      
+        <li>
+          <span class="title">
+            <a href="http://quserinn.github.iosubcategories/book-review">
+              <i class="fa fa-angle-right icon" aria-hidden="true"></i>
+              BOOK-REVIEW (1개)
+            </a>
+          </span>
+          <span class="links">
+            
+            <a href="http://quserinn.github.io/posts/200516-read-financial-statements/">
+              <small>2020-05-16</small>
+              <span class="recent-title">[리뷰] 재무제표 모르면 주식투자 절대로 하지마라</span>
             </a>
             
           </span>

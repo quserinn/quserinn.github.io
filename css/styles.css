@@ -577,3 +577,15 @@ img {
 .ads {
   text-align: center;
 }
+
+/* Mathjax */
+code.has-jax {
+  font: inherit;
+  font-size: 100%;
+  background: inherit;
+  border: inherit;
+  color: #000000;
+}
+code.has-jax span {
+  background-color: white;
+}

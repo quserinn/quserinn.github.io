@@ -41,6 +41,29 @@
       e.className = 'menu';
   }
   </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
 </head>
 <body>
   <div class="navbar">
@@ -84,6 +107,7 @@
     <li><a href="#디폴트-색-수정">디폴트 색 수정</a></li>
     <li><a href="#subcategories-추가">subcategories 추가</a></li>
     <li><a href="#code-block-표시-수정">code block 표시 수정</a></li>
+    <li><a href="#mathjax-추가">Mathjax 추가</a></li>
     <li><a href="#기타-팁">기타 팁</a></li>
   </ul>
 </nav>
@@ -107,6 +131,8 @@
 <p>원래 테마 프로젝트에서는 front matter에 categories까지 밖에 없는데 좀 더 세분화 해서 카테고리 관리를 하고 싶었다. 이건 마침 <a href="https://ialy1595.github.io/post/blog-construct-2/">이 블로그</a>에 설명이 잘 되어있어서 이걸 참고했다.</p>
 <h2 id="code-block-표시-수정">code block 표시 수정</h2>
 <p>markdown에서 single quote(`)로 짧은 code block을 만들 수 있는데 이게 웹페이지에서는 좀 어색하게 나타나는 현상이 있어서 계속 거슬렸다. 처음에는 이것도 css로 바꿀 수 있다는 것을 몰라서 삽질을 했는데, markdown에서 code black으로 쓴건 html에서 <code>&lt;code</code>로 나오기 때문에 css에서 수정하면된다.</p>
+<h2 id="mathjax-추가">Mathjax 추가</h2>
+<p>글 안에서 수식을 넣어야할 때가 있는데, mathjax를 이용하면 쉽게 수식을 만들 수 있다. 이것도 <a href="https://ialy1595.github.io/post/blog-construct-2/">여기에</a> 잘 설명되있으니 참고하면 되겠다.</p>
 <h2 id="기타-팁">기타 팁</h2>
 <ul>
 <li>로컬에서 수정해서 서버를 띄워도 바로 수정사항이 반영되지 않는 경우가 많은데, 브라우저 자체에서 페이지를 캐싱하기 때문이다. 그래서 수정사항을 바로 확인하고 싶으면 <code>ctrl+shift+R</code>로 새로고침하면 된다.(크롬 기준)</li>
