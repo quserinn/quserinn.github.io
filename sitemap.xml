@@ -53,6 +53,11 @@
   </url>
   
   <url>
+    <loc>http://quserinn.github.io/posts/how-to-make-hugo-blog/</loc>
+    <lastmod>2020-05-15T22:41:30+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://quserinn.github.io/tags/blog/</loc>
     <lastmod>2020-05-15T22:41:30+09:00</lastmod>
   </url>
@@ -73,13 +78,17 @@
   </url>
   
   <url>
-    <loc>http://quserinn.github.io/posts/200515-how-to-make-hugo-blog-2/</loc>
+    <loc>http://quserinn.github.io/posts/how-to-make-hugo-blog/200515-how-to-make-hugo-blog-2/</loc>
     <lastmod>2020-05-15T22:41:30+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://quserinn.github.io/posts/200515-how-to-make-hugo-blog-1/</loc>
+    <loc>http://quserinn.github.io/posts/how-to-make-hugo-blog/200515-how-to-make-hugo-blog-1/</loc>
     <lastmod>2020-05-13T21:42:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://quserinn.github.io/posts/learn-quant-with-python/</loc>
   </url>
   
 </urlset>

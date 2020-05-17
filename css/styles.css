@@ -327,8 +327,10 @@ img {
 .post .post-meta-code .highlight {
   color: black;
 }
-
-.post .post-next a{
+.post .post-recommend .post-prev{
+  float: left;
+}
+.post .post-recommend .post-next{
   float: right;
 }
 

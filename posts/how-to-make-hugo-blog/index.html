@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  | 소고기</title>
+  <meta name="description" content="소고기고기 ''을 한 번 살펴보세요.">
+  <meta property="og:title" content="">
+  
+  <meta property="og:type" content="website">
+  
+  <meta property="og:description" content="소고기고기 ''을 한 번 살펴보세요.">
+  <meta property="og:url" content="http://quserinn.github.io/posts/how-to-make-hugo-blog/">
+  <meta property="og:site_name" content="소고기">
+  
+  <meta property="og:image" content="http://quserinn.github.io/images/thumbnail.png">
+  
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="http://quserinn.github.io/posts/how-to-make-hugo-blog/">
+  <link rel="alternate" type="application/rss+xml" href="http://quserinn.github.io/posts/how-to-make-hugo-blog/index.xml" title="소고기" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap"> 
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>     
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> 메뉴
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/">#포스트</a></li>
+        <li><a href="/categories">#카테고리</a></li>
+        <li><a href="/tags">#태그</a></li>   
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="검색어" value="">
+    </div>
+  </div>
+  <div class="container">    
+<div class="container">
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="http://quserinn.github.io/posts/how-to-make-hugo-blog/200515-how-to-make-hugo-blog-2/" title="휴고(Hugo)와 깃허브(Github)로 블로그 만들기(2)">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>2020년 05월 15일 22시 41분</time>
+        <h1>휴고(Hugo)와 깃허브(Github)로 블로그 만들기(2)</h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    Hugo의 구조와 문법들에 대해 잘 파악해서 사용하면 좋겠지만 블로그 작업을 빨리 끝내고 포스팅을 하고싶은 나로서는 딥하게 공부하는 것은 너무나 귀찮은 일이였다. 그래서 당장 수정하고 싶은 몇가지 부분만 수정했다.
+먼저 테마는 hugo-hello-programmer-theme을 사용했다. 그냥 적당한 테마를 찾다보니 눈에 띄었는데, 마침 한국분이 만드신 거라 한글 지원도 잘되어있고, 다른 기능들도 만족스러워서 사용했다. 지금부터 설명하는 내용은 모두 이 테마를 기반으로 되어 있기 때문에 다른 테마에서는 적용되지 않을 수도 있다.
+그럼 이제부터 내가 한 귀찮은 작업들을 정리해 본다.
+    
+    <a href="/posts/how-to-make-hugo-blog/200515-how-to-make-hugo-blog-2/" class="summary-more">더보기</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+  <div class="post">
+  <div class="post-title">
+    <a href="http://quserinn.github.io/posts/how-to-make-hugo-blog/200515-how-to-make-hugo-blog-1/" title="휴고(Hugo)와 깃허브(Github)로 블로그 만들기(1)">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>2020년 05월 13일 21시 42분</time>
+        <h1>휴고(Hugo)와 깃허브(Github)로 블로그 만들기(1)</h1>
+      </div>
+    </a>
+  </div>
+  
+  <div>
+    오래 전에는 잘하는 개발자가 되려면 기술 블로그 하나정도는 해야한다는 생각을 했었다. 그래서 만들어야지 생각만 하다가 취업을 앞두고 jekyll을 이용해서 만들었지만 막상 만들고 나서는 포스팅 할게 없어서 방치해 두었던 기억이 있다. 취업을 하게된 지금에서야 포스팅 하고 싶은게 생겨서 다시 처음부터 블로그를 만들어 봤다.
+ Hugo를 선택한 이유 사실 jekyll이 사용자도 가장 많고, 그만큼 테마도 많은 것으로 알고 있다. 그래서 저번에 블로그를 만들 때도 jekyll을 이용해서 만들었는데, Ruby로 만들어져 있다 보니 Ruby에 대한 이해가 부족한 나로서는 제대로 이해하지 못하고 가이드를 따라가기만 해야했다.
+    
+    <a href="/posts/how-to-make-hugo-blog/200515-how-to-make-hugo-blog-1/" class="summary-more">더보기</a>
+    
+  </div>
+</div>
+
+  <hr class="summary-sep" />
+  
+</div>
+<div class="paging">
+  
+  <span class="page">
+    페이지 1 / 1
+  </span>
+  
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>위로</span>
+  </a>
+</div>
+<footer class="footer">
+  COPYRIGHT (C) <a href="https://blog.lulab.net">DONGGEUN,BANG (LUBANG).</a><br />
+  ALL RIGHTS RESERVED.
+</footer>
+</body>
+</html>
+
