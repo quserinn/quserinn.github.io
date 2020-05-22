@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>주식 on 소고기</title>
-    <link>http://quserinn.github.io/tags/%EC%A3%BC%EC%8B%9D/</link>
-    <description>Recent content in 주식 on 소고기</description>
+    <title>quant on 소고기</title>
+    <link>http://quserinn.github.io/tags/quant/</link>
+    <description>Recent content in quant on 소고기</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
     <managingEditor>quserinn@naver.com (신지호)</managingEditor>
     <webMaster>quserinn@naver.com (신지호)</webMaster>
     <lastBuildDate>Fri, 22 May 2020 14:06:19 +0900</lastBuildDate>
     
-	<atom:link href="http://quserinn.github.io/tags/%EC%A3%BC%EC%8B%9D/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://quserinn.github.io/tags/quant/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -31,17 +31,6 @@
       <guid>http://quserinn.github.io/posts/learn-quant-with-python/200517-learn-quant-with-python-1/</guid>
       <description>주식을 시작하고 나서 종목 선정을 위해 재무제표나 차트를 보는게 너무 귀찮아서 적정가 측정이나, 위험 정도 여부 등등을 자동으로 체크할 수 있다면 좋겠다고 생각했다. 그러던 차에 &amp;lsquo;퀀트&amp;rsquo;라는 단어가 눈에 띄었고, 예전에 알고리즘으로 주식투자 하는 직업에 대해 이야기 들었던 것이 기억이 났다.
 퀀트에 대해 찾아보니 이미 많은 사람들이 주식에 활용하고 있었고, 무료 툴들도 많았다. 다른 사람들이 만들어 놓은 툴을 사용해도 되지만 직접 만들어서 하는 것도 재밌을 것 같아서 파이썬으로 개발을 해보기로 했다.</description>
-    </item>
-    
-    <item>
-      <title>[리뷰] 재무제표 모르면 주식투자 절대로 하지마라</title>
-      <link>http://quserinn.github.io/posts/200516-read-financial-statements/</link>
-      <pubDate>Sat, 16 May 2020 09:36:39 +0900</pubDate>
-      <author>quserinn@naver.com (신지호)</author>
-      <guid>http://quserinn.github.io/posts/200516-read-financial-statements/</guid>
-      <description>주식 투자를 하는 방법에는 여러가지가 있지만 나는 내 감을 믿지 않기 때문에 매수/매도 타이밍, 종목 안정성 등이 명확한 근거에 따라 답이 나오는 방식을 선호한다. 그러던 차에 종목 차트나 어떤 회사인지 확인하지 않고 오로지 재무제표만 보고 투자를 해서 수익을 내는데 성공했다는 사람이 있다는 것을 알게되었고, 바로 책을 사서 읽었다.
-이 책의 내용은 크게 두가지이다.
- 재무제표로 손실을 줄이는 방법 재무제표로 수익을 내는 방법   재무제표로 손실을 줄이는 방법 여기서 소개하는 방법은 재무제표를 보고 주가의 하락을 맞추는 것이 아니라 앞으로 망할 가능성이 있는 회사를 찾는 것이다.</description>
     </item>
     
   </channel>

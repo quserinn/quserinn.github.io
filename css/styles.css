@@ -244,6 +244,10 @@ img {
 }
 .post .post-content img {
   max-width: 100%;
+  display: block;
+  margin: auto;
+  border:1px solid #b2ebf2;
+  padding: 5px;
 }
 .post .post-content blockquote {
   border-left: #717171 solid 4px;

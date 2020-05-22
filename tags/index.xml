@@ -8,10 +8,37 @@
     <language>ko-KR</language>
     <managingEditor>quserinn@naver.com (신지호)</managingEditor>
     <webMaster>quserinn@naver.com (신지호)</webMaster>
-    <lastBuildDate>Sat, 16 May 2020 09:36:39 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2020 14:06:19 +0900</lastBuildDate>
     
 	<atom:link href="http://quserinn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python</title>
+      <link>http://quserinn.github.io/tags/python/</link>
+      <pubDate>Fri, 22 May 2020 14:06:19 +0900</pubDate>
+      <author>quserinn@naver.com (신지호)</author>
+      <guid>http://quserinn.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quant</title>
+      <link>http://quserinn.github.io/tags/quant/</link>
+      <pubDate>Fri, 22 May 2020 14:06:19 +0900</pubDate>
+      <author>quserinn@naver.com (신지호)</author>
+      <guid>http://quserinn.github.io/tags/quant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>주식</title>
+      <link>http://quserinn.github.io/tags/%EC%A3%BC%EC%8B%9D/</link>
+      <pubDate>Fri, 22 May 2020 14:06:19 +0900</pubDate>
+      <author>quserinn@naver.com (신지호)</author>
+      <guid>http://quserinn.github.io/tags/%EC%A3%BC%EC%8B%9D/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>재무제표</title>
@@ -19,15 +46,6 @@
       <pubDate>Sat, 16 May 2020 09:36:39 +0900</pubDate>
       <author>quserinn@naver.com (신지호)</author>
       <guid>http://quserinn.github.io/tags/%EC%9E%AC%EB%AC%B4%EC%A0%9C%ED%91%9C/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>주식</title>
-      <link>http://quserinn.github.io/tags/%EC%A3%BC%EC%8B%9D/</link>
-      <pubDate>Sat, 16 May 2020 09:36:39 +0900</pubDate>
-      <author>quserinn@naver.com (신지호)</author>
-      <guid>http://quserinn.github.io/tags/%EC%A3%BC%EC%8B%9D/</guid>
       <description></description>
     </item>
     

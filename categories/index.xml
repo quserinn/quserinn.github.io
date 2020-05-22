@@ -8,7 +8,7 @@
     <language>ko-KR</language>
     <managingEditor>quserinn@naver.com (신지호)</managingEditor>
     <webMaster>quserinn@naver.com (신지호)</webMaster>
-    <lastBuildDate>Sat, 16 May 2020 09:36:39 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2020 14:06:19 +0900</lastBuildDate>
     
 	<atom:link href="http://quserinn.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,9 +16,18 @@
     <item>
       <title>stock</title>
       <link>http://quserinn.github.io/categories/stock/</link>
-      <pubDate>Sat, 16 May 2020 09:36:39 +0900</pubDate>
+      <pubDate>Fri, 22 May 2020 14:06:19 +0900</pubDate>
       <author>quserinn@naver.com (신지호)</author>
       <guid>http://quserinn.github.io/categories/stock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stock-develop</title>
+      <link>http://quserinn.github.io/categories/stock-develop/</link>
+      <pubDate>Fri, 22 May 2020 14:06:19 +0900</pubDate>
+      <author>quserinn@naver.com (신지호)</author>
+      <guid>http://quserinn.github.io/categories/stock-develop/</guid>
       <description></description>
     </item>
     

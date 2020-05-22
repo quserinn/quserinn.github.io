@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파이썬(python)으로 퀀트 시작하기(2) - CompanyGuide 데이터 크롤링  | 소고기</title>
+  <meta name="description" content="소고기고기 '파이썬(python)으로 퀀트 시작하기(2) - CompanyGuide 데이터 크롤링'을 한 번 살펴보세요.">
+  <meta property="og:title" content="파이썬(python)으로 퀀트 시작하기(2) - CompanyGuide 데이터 크롤링">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2020-05-22">
+  
+  <meta property="og:description" content="소고기고기 '파이썬(python)으로 퀀트 시작하기(2) - CompanyGuide 데이터 크롤링'을 한 번 살펴보세요.">
+  <meta property="og:url" content="http://quserinn.github.io/posts/learn-quant-with-python/200522-learn-quant-with-python-2/">
+  <meta property="og:site_name" content="소고기">
+  
+  <meta property="og:image" content="http://quserinn.github.io/images/thumbnail.png">
+  
+  
+  <meta property="og:tags" content="주식">
+  
+  <meta property="og:tags" content="quant">
+  
+  <meta property="og:tags" content="python">
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="http://quserinn.github.io/posts/learn-quant-with-python/200522-learn-quant-with-python-2/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/agate.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap"> 
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+  
+  <script type="text/javascript">
+  function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.className === 'menu')
+      e.className = 'menu hidden';
+    else
+      e.className = 'menu';
+  }
+  </script>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script> 
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" height="34px" />
+      </a>
+    </div>     
+    <div class="burger">
+      <button onclick="toggle_visibility('menu')">
+        <i class="fa fa-bars" aria-hidden="true"></i> 메뉴
+      </button>
+    </div>
+    <div id="menu" class="menu hidden">
+      <ul>
+        <li><a href="/">#포스트</a></li>
+        <li><a href="/categories">#카테고리</a></li>
+        <li><a href="/tags">#태그</a></li>   
+      </ul>
+      <input class="search" id="search-input" type="search" placeholder="검색어" value="">
+    </div>
+  </div>
+  <div class="container">    
+
+<div class="post">
+  <div class="post-title">
+    <a href="http://quserinn.github.io/posts/learn-quant-with-python/200522-learn-quant-with-python-2/">
+      <img src="/images/post-title-icon.png" />
+      <div class="post-meta">
+        <time>2020년 05월 22일 14시 06분</time>
+        <h1>파이썬(python)으로 퀀트 시작하기(2) - CompanyGuide 데이터 크롤링</h1>
+      </div>
+    </a>
+  </div>
+  <div class="post-toc">
+    <span class="title">차례</span>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#사용-도구">사용 도구</a></li>
+    <li><a href="#데이터-원본">데이터 원본</a></li>
+    <li><a href="#배경지식">배경지식</a>
+      <ul>
+        <li><a href="#beautifulsoup">BeautifulSoup</a></li>
+      </ul>
+    </li>
+    <li><a href="#삼성전자-데이터-크롤링">삼성전자 데이터 크롤링</a>
+      <ul>
+        <li><a href="#1-데이터-형식-확인">1. 데이터 형식 확인</a></li>
+        <li><a href="#2-구현">2. 구현</a></li>
+        <li><a href="#3-전체-코드">3. 전체 코드</a></li>
+      </ul>
+    </li>
+    <li><a href="#모든-종목-데이터-크롤링">모든 종목 데이터 크롤링</a>
+      <ul>
+        <li><a href="#전체-코드">전체 코드</a></li>
+      </ul>
+    </li>
+    <li><a href="#결과-화면">결과 화면</a></li>
+  </ul>
+</nav>
+  </div>
+  <section class="post-content">
+    <p>퀀트 전략 알고리즘을 돌리기 위해서는 회사의 재무제표 데이터가 필요하다. 재무제표 데이터는 전자공시시스템인 DART, FnGuide, 네이버 증권 등에서 찾아볼 수 있다. 각각의 사이트마다 데이터를 표현하고 있는 방식들이 다르기 때문에 먼저 어떤 형식으로 가공되어 있는 데이터를 뽑아올 지 정해야 한다. 나는 먼저 데이터 양은 충분하되, 귀찮게 재가공할 필요가 없는 데이터를 뽑고 싶었다.</p>
+<p>그래서 각각의 사이트에서 확인을 해 보았는데, 먼저 DART는 딱 봐도 귀찮은 작업들이 많을 것 같았다. <a href="http://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&amp;gicode=A005930&amp;cID=&amp;MenuYn=Y&amp;ReportGB=&amp;NewMenuID=101&amp;stkGb=701">CompanyGuide</a>나 <a href="https://finance.naver.com/item/coinfo.nhn?code=005930">네이버 증권</a>에는 재무 요약 표가 있는데, 이정도 데이터면 충분하다고 생각했다. 먼저 네이버 증권에 데이터가 좀 더 많아서 네이버 증권에서 크롤링 하는 코드를 만들었는데, 네이버 증권의 재무 데이터는 js로 불러오고 있기 때문에 브라우저를 통해서 크롤링이 가능하다. 그래서 좀 더 복잡하고 시간이 오래 걸리기 때문에 CompanyGuide에서 크롤링하는 코드를 다시 만들었다.</p>
+<p>두 코드 모두 <a href="https://github.com/quserinn/Korea-Stock-Crawler">여기서</a> 확인가능하다.</p>
+<h2 id="사용-도구">사용 도구</h2>
+<ul>
+<li>Python 3.7</li>
+<li>Chrome Browser</li>
+</ul>
+<h2 id="데이터-원본">데이터 원본</h2>
+<blockquote>
+<p><a href="http://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&amp;gicode=A005930&amp;cID=&amp;MenuYn=Y&amp;ReportGB=&amp;NewMenuID=101&amp;stkGb=701">이 링크</a>에서 확인 가능하다.</p>
+</blockquote>
+<p><img src="/content-images/fnguide-financial-highlight.png" alt="fnguide-financial-highlight"></p>
+<h2 id="배경지식">배경지식</h2>
+<h3 id="beautifulsoup">BeautifulSoup</h3>
+<p>여기서 데이터 크롤링이라는 것은 html을 읽어와서 필요한 데이터만 추출해서 가공하는 것인데, bs4는 html에서 쉽게 오브젝트를 뽑아주도록 도와준다. 예를 들면,</p>
+<pre><code>soup = bs4.BeautifulSoup(html, 'html.parser')
+soup.find_all('table')
+</code></pre><p>위 코드로 html에서 table tag가 달린 오브젝트들을 모두 들고 올 수 있다. 자세한 내용은 검색하면 많이 나오니까 참고하면 된다.</p>
+<h2 id="삼성전자-데이터-크롤링">삼성전자 데이터 크롤링</h2>
+<h3 id="1-데이터-형식-확인">1. 데이터 형식 확인</h3>
+<p>브라우저에서 F12를 누르면 개발자 도구를 열 수 있는데, 여기서 가져오고 싶은 데이터가 html에 어떤 방식으로 위치 해 있는지 확인할 수 있다.</p>
+<p><img src="/content-images/crawling-pic-1.png" alt="crawling-pic-1"></p>
+<p>여기서 빨간색 네모를 누르면 영역을 선택할 수 있게 나오는데, 우리가 원하는 데이터인 표 영역을 누르면 오른쪽 개발자 도구에 html 코드 중 어디에 위치해 있는지 알 수 있다.</p>
+<p><img src="/content-images/crawling-pic-3.png" alt="crawling-pic-3"></p>
+<p>html 코드를 확인해 보면 <code>&lt;div class=&quot;um_table&quot; id=&quot;highlight_D_A&quot; style&gt;</code> 이 부분 밑에 있는 테이블이 우리가 원하는 데이터 임을 알 수 있다.</p>
+<h3 id="2-구현">2. 구현</h3>
+<p>먼저 html을 읽어서 BeautifulSoup 오브젝트로 만들어 보자.</p>
+<p>데이터가 들어있는 주소는  <a href="http://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&amp;gicode=A005930&amp;cID=&amp;MenuYn=Y&amp;ReportGB=&amp;NewMenuID=101&amp;stkGb=701">http://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&amp;gicode=A005930&amp;cID=&amp;MenuYn=Y&amp;ReportGB=&amp;NewMenuID=101&amp;stkGb=701</a> 이다.</p>
+<pre><code>url = &quot;http://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&amp;gicode=A005930&amp;cID=&amp;MenuYn=Y&amp;ReportGB=&amp;NewMenuID=101&amp;stkGb=701&quot;
+html = requests.get(url).text
+soup = BeautifulSoup(html, 'html.parser')
+</code></pre><p>전체 html을 BeautifulSoup로 만들었느니 여기서 재무 데이터에 해당되는 <code>&lt;table&gt;</code>을 가져오자. 앞서 확인했던 <code>&lt;div class=&quot;um_table&quot; id=&quot;highlight_D_A&quot; style&gt;</code>에서 <code>id</code>를 가지고 찾을 수 있다.</p>
+<pre><code>fin_info = soup.select('#highlight_D_A')[0]
+</code></pre><p><code>id</code>가 <code>highlight_D_A</code>인 오브젝트를 읽어와서 확인해 보면 대략 아래와 같이 나온다.</p>
+<pre><code>&lt;div class=&quot;um_table&quot; id=&quot;highlight_D_A&quot; style=&quot;display:none;&quot;&gt;
+&lt;table class=&quot;us_table_ty1 h_fix zigbg_no&quot;&gt;
+&lt;caption class=&quot;cphidden&quot;&gt;Financial Highlight&lt;/caption&gt;        
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 120px;&quot;/&gt;
+&lt;col span=&quot;8&quot;/&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&quot;th2row_f&quot;&gt;&lt;th class=&quot;clf tbold&quot; rowspan=&quot;2&quot; scope=&quot;col&quot;&gt;&lt;div&gt;IFRS(연결)&lt;/div&gt;&lt;/th&gt; &lt;th colspan=&quot;4&quot; scope=&quot;col&quot;&gt;&lt;div&gt;Annual&lt;/div&gt;&lt;/th&gt; &lt;th colspan=&quot;4&quot; scope=&quot;col&quot;&gt;&lt;div&gt;Net Quarter&lt;/div&gt;&lt;/th&gt; &lt;/tr&gt;&lt;tr class=&quot;td_gapcolor2&quot;&gt;
+&lt;th scope=&quot;col&quot;&gt;&lt;div&gt;2017/12&lt;/div&gt;&lt;/th&gt;
+&lt;th scope=&quot;col&quot;&gt;&lt;div&gt;2018/12&lt;/div&gt;&lt;/th&gt;
+
+...
+
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;th class=&quot;clf&quot; scope=&quot;row&quot;&gt;&lt;div&gt;매출액&lt;/div&gt;&lt;/th&gt;&lt;td class=&quot;r&quot;&gt;1,162&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;1,287&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;1,483&lt;/td&gt; &lt;td class=&quot;r tdbg_b&quot;&gt; &lt;/td&gt; &lt;td class=&quot;r&quot;&gt;336&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;363&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;456&lt;/td&gt; &lt;td class=&quot;r tdbg_b cle&quot;&gt; &lt;/td&gt; &lt;/tr&gt;
+&lt;tr&gt;&lt;th class=&quot;clf&quot; scope=&quot;row&quot;&gt;&lt;div&gt;영업이익&lt;/div&gt;&lt;/th&gt;&lt;td class=&quot;r&quot;&gt;127&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;182&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;237&lt;/td&gt; &lt;td class=&quot;r tdbg_b&quot;&gt; &lt;/td&gt; &lt;td class=&quot;r&quot;&gt;46&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;54&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;93&lt;/td&gt; 
+&lt;td class=&quot;r tdbg_b cle&quot;&gt; &lt;/td&gt; &lt;/tr&gt;
+
+...
+
+
+</code></pre><p>우리는 위의 데이터를 DataFrame으로 만들어야 하기 때문에, row 데이터, column 데이터, 그리고 각 값들을 뽑아 오면 된다.</p>
+<p>먼저 column 데이터를 뽑아보자. 위의 데이터에서 column 데이터는 <code>2017/12</code> 같은 날짜 데이터이다. 이 데이터들은 <code>&lt;thead&gt;</code> 안의 <code>&lt;th&gt;</code> 태그 안에 들어있기 때문에 아래와 같은 코드로 구할 수 있다.</p>
+<pre><code>col_data = [item.get_text() if len(item.get_text()) == 7 else item.get_text()[-12:-5] for item in fin_info.select('thead th')]
+col_index = th_data[3:13]
+</code></pre><pre><code>['2017/12', '2018/12', '2019/12', '2020/12', '2019/06', '2019/09', '2019/12', '2020/03']
+</code></pre><p>중간 중간 형식이 달라서 코드가 깔끔하지 않지만 위 코드로 아래와 같이 데이터를 뽑을 수 있다.</p>
+<p>다음으로 row 데이터도 비슷하게 뽑을 수 있다. row 데이터는 <code>&lt;tbody&gt;</code> 안의 <code>&lt;th&gt;</code> 태그 안에 들어있다.</p>
+<pre><code>row_index = [item.find('dt').get_text().strip() if item.dt else item.get_text().strip() for item in fin_info.select('tbody th')]
+</code></pre><pre><code>['매출액', '영업이익', '영업이익(발표기준)', '당기순이익', '지배주주순이익', '비지배주주순이익', '자산총계', '부채총계', '자본총계', '지배주주지분', '비지배주주지분', '자본금', '부채비율(%)', '유보율(%)', '영업이익률(%)', '지배주주 귀속순이익률(%)', 'ROA(%)', 'ROE(%)', 'EPS(원)', 'BPS(원)', 'DPS(원)', 'PER(배)', 'PBR(배)', '발행주식수', '배당수익률(%)']
+</code></pre><p>마찬가지로 항목마다 형식이 조금씩 다르기 때문에 잘 바꿔야한다.</p>
+<p>다음으로는 실제 항목 값들을 들고와 보자.</p>
+<pre><code>fin_data = [item.get_text().strip() for item in fin_info.select('td')]
+fin_data = np.array(fin_data)
+fin_data.resize(len(row_index), len(col_index))
+</code></pre><p>데이터를 들고와서 numpy array 형식으로 저장해 주었다.</p>
+<p>마지막으로 DataFrame으로 만들면 된다.</p>
+<pre><code>fin_df = pd.DataFrame(data=fin_data[0:,0:], index=row_index, columns=col_index)
+</code></pre><p>그럼 최종적으로 아래와 같은 데이터를 얻을 수 있다.</p>
+<pre><code>               2017/12 2018/12   2019/12 2020/12 2019/06 2019/09   2019/12 2020/03
+매출액              1,162   1,287     1,483             336     363       456
+영업이익               127     182       237              46      54        93
+영업이익(발표기준)         127     182       237              46      54        93
+
+...
+
+발행주식수           13,536  13,536    13,536          13,536  13,536    13,536
+배당수익률(%)          0.51    0.47      0.48                              0.48
+</code></pre><h3 id="3-전체-코드">3. 전체 코드</h3>
+<pre><code>import pandas as pd
+import requests
+import bs4
+import numpy as np
+
+url = &quot;http://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&amp;gicode=A079940&amp;cID=&amp;MenuYn=Y&amp;ReportGB=&amp;NewMenuID=101&amp;stkGb=701&quot;
+
+fs_info = requests.get(url).text
+bs = bs4.BeautifulSoup(fs_info, 'html.parser')
+fin_info = bs.select('#highlight_D_A')[0]
+
+row_data = [item.get_text() if len(item.get_text()) == 7 else item.get_text()[-12:-5] for item in fin_info.select('thead th')]
+        
+col_index = row_data[3:13]
+row_index = [item.find('dt').get_text().strip() if item.dt else item.get_text().strip() for item in fin_info.select('tbody th')]
+
+fin_data = [item.get_text().strip() for item in fin_info.select('td')]
+fin_data = np.array(fin_data)
+fin_data.resize(len(row_index), len(col_index))
+
+fin_df = pd.DataFrame(data=fin_data[0:,0:], index=row_index, columns=col_index)
+</code></pre><h2 id="모든-종목-데이터-크롤링">모든 종목 데이터 크롤링</h2>
+<p>모든 종목에 대해 데이터 크롤링을 하려면 위의 코드를 함수화 하고 각 종목에 대해서 함수를 돌리면 된다. 그러려면 먼저 모든 종목 코드가 필요하다. 종목 코드는 <a href="http://marketdata.krx.co.kr/mdi#document=040601">여기서</a> 구할 수 있다.</p>
+<p><img src="/content-images/crawling-pic-4.png" alt="crawling-pic-4"></p>
+<p>위 페이지에서 CSV 파일로 다운받으면 된다. 파일 이름을 <code>data.csv</code>로 지정 했다면, 아래 코드로 종목코드를 읽을 수 있다.</p>
+<pre><code>firm_datas = pd.read_excel('data.csv')
+firm_datas = firm_datas[[&quot;종목코드&quot;, &quot;기업명&quot;, &quot;업종코드&quot;, &quot;상장주식수(주)&quot;]]
+firm_datas[&quot;종목코드&quot;] = firm_datas[&quot;종목코드&quot;].apply(lambda code: 'A' + '0'*(6-len(str(code))) + str(code))
+</code></pre><p>파일에 저장되어있는 코드와 CompanyGuide 링크로 사용할 종목 코드 형식이 다르기 때문에 <code>apply</code>함수로 수정해주어야 한다.</p>
+<h3 id="전체-코드">전체 코드</h3>
+<p>전체 코드는 깃허브에 올려놓았다. <a href="https://github.com/quserinn/Korea-Stock-Crawler">링크</a></p>
+<h2 id="결과-화면">결과 화면</h2>
+<p><img src="/content-images/crawling-pic-5.png" alt="crawling-pic-5"></p>
+<hr>
+
+  </section>
+  
+  
+  <div class="post-recommend">
+    
+    <a class="post-prev" href="http://quserinn.github.io/posts/learn-quant-with-python/200517-learn-quant-with-python-1/">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      <span>
+          파이썬(python)으로 퀀트 시작하기(1) - 소개
+      </span>
+    </a>
+    
+    
+  </div>
+  
+
+  
+  <div class="post-comment">    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "quserinn" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>    
+  </div>
+  
+</div>
+
+<div class="go-top">
+  <a href="#" class="go-top-button">
+    <i class="fa fa-angle-double-up"></i>
+    <span>위로</span>
+  </a>
+</div>
+<footer class="footer">
+  COPYRIGHT (C) <a href="https://blog.lulab.net">DONGGEUN,BANG (LUBANG).</a><br />
+  ALL RIGHTS RESERVED.
+</footer>
+</body>
+</html>
+
